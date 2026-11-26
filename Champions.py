@@ -35,10 +35,10 @@ orden = np.lexsort((-diferencia, -puntos))
 tabla = tabla[orden]
 
 encabezado = "equipo,ganados,empatados,perdidos,goles_favor,goles_contra,puntos,diferencia_goles"
-np.savetxt("tabla posiciones.csv", tabla, delimiter=",", fmt="%s",
+np.savetxt("tabla_posiciones.csv", tabla, delimiter=",", fmt="%s",
            header=encabezado, comments="", encoding="utf-8")
 
-print("\nArchivo tabla posiciones.csv creado")
+print("\nArchivo tabla_posiciones.csv creado")
 
 plt.figure(figsize=(12, 6))
 barras = plt.bar(equipos[orden], puntos[orden], color="royalblue")
@@ -52,5 +52,5 @@ plt.xticks(rotation=45, ha="right")
 plt.yticks(range(0, puntos.max() + 2, 2))
 plt.tight_layout()
 
-plt.savefig("grafica puntos.png", dpi=150)
+plt.savefig("grafica_puntos.png", dpi=150)
 plt.show()
